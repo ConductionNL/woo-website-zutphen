@@ -26,8 +26,8 @@
     "items": [
       {
         "ariaLabel": "Website",
-        "value": "www.gemeente.leiden.nl/",
-        "link": "https://gemeente.leiden.nl/",
+        "value": "www.zutphen.nl/",
+        "link": "https://zutphen.nl/",
         "icon": { "prefix": "fas", "icon": "globe", "placement": "left" }
       },
       {
