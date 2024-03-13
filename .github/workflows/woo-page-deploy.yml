@@ -1,32 +1,30 @@
-name: Deploy the WOO Page to GitHub Pages
+name: Deploy the Product Page to GitHub Pages
 
 env: # Change these to your preferences any image url can also be a base encoded image
   GITHUB_PAGES_BRANCH: gh-pages
 
   # options: "true" | "false"
   USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: "true"
-
+  
   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   API_BASE_URL: "https://api.gateway.commonground.nu/api"
-  NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+  NL_DESIGN_THEME_CLASSNAME: "zutphen-theme"
   DEV_ENVIRONMENT: "true"
   SHOW_CATEGORY: "true"
-  SHOW_ORGANIZATION: "true"
-  FAVICON_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-favicon-32x32.png"
-  HEADER_LOGO_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"
-  ORGANISATION_NAME: "Conduction"
-  JUMBOTRON_IMAGE_URL: "https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"
-  FOOTER_LOGO_URL: "true"
-  FOOTER_LOGO_HREF: "https://conduction.nl/"
+  SHOW_ORGANIZATION: "false"
+  FAVICON_URL: "https://zutphen.nl/themes/zutphen/favicon.ico"
+  HEADER_LOGO_URL: "https://gemeente.leiden.nl/typo3conf/ext/leiden_template/Resources/Public/Images/logo_leiden.svg"
+  ORGANISATION_NAME: "Gemeente Zutphen"
+  JUMBOTRON_IMAGE_URL: "https://zutphen.nl/sites/default/files/2023-10/Bult-05020-pano-WebsiteKlein.jpg"
+  FOOTER_LOGO_HREF: "https://zutphen.nl/"
   FOOTER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/${{github.event.repository.name}}/main/FooterContent.json"
-  FOOTER_CONTENT_HEADER: "heading-2"
-  # OIDN_NUMBER: " "
+  OIDN_NUMBER: "00000001813584620000"
   ENV_VARS_SET: "true"
 
 on:
   push:
     branches:
-      - never
+      - main
 
 jobs:
   build:
@@ -54,11 +52,9 @@ jobs:
           envkey_GATSBY_HEADER_LOGO_URL: ${{ env.HEADER_LOGO_URL }}
           envkey_GATSBY_ORGANISATION_NAME: ${{ env.ORGANISATION_NAME }}
           envkey_GATSBY_JUMBOTRON_IMAGE_URL: ${{ env.JUMBOTRON_IMAGE_URL }}
-          envkey_GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
           envkey_GATSBY_FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}
           envkey_GATSBY_FOOTER_CONTENT: ${{ env.FOOTER_CONTENT }}
-          envkey_GATSBY_FOOTER_CONTENT_HEADER: ${{ env.FOOTER_CONTENT_HEADER }}
-          # envkey_GATSBY_OIDN_NUMBER: ${{ env.OIDN_NUMBER }}
+          envkey_GATSBY_OIDN_NUMBER: ${{ env.OIDN_NUMBER }}
           envkey_GATSBY_ENV_VARS_SET: ${{ env.ENV_VARS_SET }}
           directory: pwa/static
           file_name: .env.production
