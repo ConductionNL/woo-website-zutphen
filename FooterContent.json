@@ -1,10 +1,9 @@
 [
   {
-    "title": "Contact",
     "items": [
       {
         "ariaLabel": "Address",
-        "value": "Gemeente Zutphen 's Gravenhof 2 7201 DN Zutphen",
+        "multiRow": "Gemeente Zutphen \n 's Gravenhof 2 \n 7201 DN Zutphen",
         "icon": { "prefix": "fas", "icon": "location-dot", "placement": "left" }
       },
       {
@@ -22,7 +21,6 @@
     ]
   },
   {
-    "title": "Algemeen",
     "items": [
       {
         "ariaLabel": "Website",
